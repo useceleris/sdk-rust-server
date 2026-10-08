@@ -1,0 +1,528 @@
+[
+  {
+    "name": "reference-controls",
+    "clientId": "synthetic-client",
+    "signingSecret": "synthetic-secret",
+    "timestamp": 1700000000123,
+    "claims": {
+      "channels": {
+        "kind": "all"
+      },
+      "permissions": {
+        "kind": "all",
+        "read": true,
+        "write": false
+      },
+      "reference": "\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\t\u000b\f\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u001c\u001d\u001e\u001f"
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjE3MDAwMDAwMDAxMjMsInJlZmVyZW5jZSI6Ilx1MDAwMFx1MDAwMVx1MDAwMlx1MDAwM1x1MDAwNFx1MDAwNVx1MDAwNlx1MDAwN1xiXHRcdTAwMGJcZlx1MDAwZVx1MDAwZlx1MDAxMFx1MDAxMVx1MDAxMlx1MDAxM1x1MDAxNFx1MDAxNVx1MDAxNlx1MDAxN1x1MDAxOFx1MDAxOVx1MDAxYVx1MDAxYlx1MDAxY1x1MDAxZFx1MDAxZVx1MDAxZiIsImNoYW5uZWxfcmVmZXJlbmNlcyI6bnVsbCwidG9rZW5fcGVybWlzc2lvbiI6eyJyZWFkIjp0cnVlLCJ3cml0ZSI6ZmFsc2V9LCJyZXBsYXkiOmZhbHNlLCJhbGxvd19lY2hvIjpmYWxzZX0=",
+      "signature": "c3ludGhldGljLWNsaWVudDpmNTc0NDQ1ODMwN2E0M2MwNGIzZWQ5Mjc1MTgyYjc0M2FhMmRiNGVjMDI1ZWRjZDcyNTg4YzNiMTAyZTI0NTRjY2QzMjUwMmI2NjcyNWE2YWVkNjY0YzhiNzVkYTY4ZWEwNjU2MWMwY2QxZjRkZTBkODNiZTI4ZDY0MTcyOGRiMg=="
+    }
+  },
+  {
+    "name": "segment-controls",
+    "clientId": "synthetic-client",
+    "signingSecret": "synthetic-secret",
+    "timestamp": 1700000000123,
+    "claims": {
+      "channels": {
+        "kind": "restricted",
+        "references": [
+          "room-1",
+          "Room_2",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        ]
+      },
+      "permissions": {
+        "kind": "restricted",
+        "segments": [
+          {
+            "segmentId": "seg:\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\t\u000b\f\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u001c\u001d\u001e\u001f",
+            "read": true,
+            "write": true
+          },
+          {
+            "segmentId": "plain",
+            "read": false,
+            "write": false
+          }
+        ]
+      },
+      "replay": {
+        "lookbackMs": 1234
+      },
+      "allowEcho": true
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjE3MDAwMDAwMDAxMjMsImNoYW5uZWxfcmVmZXJlbmNlcyI6WyJyb29tLTEiLCJSb29tXzIiLCJhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWEiXSwidG9rZW5fcGVybWlzc2lvbiI6W3sic2VnbWVudF9pZCI6InNlZzpcdTAwMDBcdTAwMDFcdTAwMDJcdTAwMDNcdTAwMDRcdTAwMDVcdTAwMDZcdTAwMDdcYlx0XHUwMDBiXGZcdTAwMGVcdTAwMGZcdTAwMTBcdTAwMTFcdTAwMTJcdTAwMTNcdTAwMTRcdTAwMTVcdTAwMTZcdTAwMTdcdTAwMThcdTAwMTlcdTAwMWFcdTAwMWJcdTAwMWNcdTAwMWRcdTAwMWVcdTAwMWYiLCJyZWFkIjp0cnVlLCJ3cml0ZSI6dHJ1ZX0seyJzZWdtZW50X2lkIjoicGxhaW4iLCJyZWFkIjpmYWxzZSwid3JpdGUiOmZhbHNlfV0sInJlcGxheSI6MTIzNCwiYWxsb3dfZWNobyI6dHJ1ZX0=",
+      "signature": "c3ludGhldGljLWNsaWVudDoyMGVmYjZiOTk3Mjg1NzUwYjliMTczNDJmYmY3NmUyODJkY2Q1Y2UxMzBmNGRlOGRiZDY1ZWY1N2U2OWY1M2NkNzYyYTRmZWUxZmYyMWY1YjlmNDU5YzVhNjA1Y2E1NGExYTE4YzkzOTdjZTRmM2M1M2Q1MzU0NjcyNjgwZGY5OQ=="
+    }
+  },
+  {
+    "name": "reference-quotes",
+    "clientId": "synthetic-client",
+    "signingSecret": "synthetic-secret",
+    "timestamp": 1700000000123,
+    "claims": {
+      "channels": {
+        "kind": "all"
+      },
+      "permissions": {
+        "kind": "all",
+        "read": true,
+        "write": false
+      },
+      "reference": "say \"hi\" \\ back\\slash / slash"
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjE3MDAwMDAwMDAxMjMsInJlZmVyZW5jZSI6InNheSBcImhpXCIgXFwgYmFja1xcc2xhc2ggLyBzbGFzaCIsImNoYW5uZWxfcmVmZXJlbmNlcyI6bnVsbCwidG9rZW5fcGVybWlzc2lvbiI6eyJyZWFkIjp0cnVlLCJ3cml0ZSI6ZmFsc2V9LCJyZXBsYXkiOmZhbHNlLCJhbGxvd19lY2hvIjpmYWxzZX0=",
+      "signature": "c3ludGhldGljLWNsaWVudDo2MDU1MjEyZmEzNGI1MjdkYTI3ZDBkN2Q1MWViZjk0YTY2ZTU5NTI2YzZlMWE5YjFhM2Q4NDk3YjkyMTA0OTliMzRkMjg4OTc3YTNkNGI0ODg4MzIyMGIxYmU5NWI2NjFmNWU1ZWEzYThiNWRhNjcxMGZlZDE4ODU4MWQ2ZmU4NA=="
+    }
+  },
+  {
+    "name": "segment-quotes",
+    "clientId": "synthetic-client",
+    "signingSecret": "synthetic-secret",
+    "timestamp": 1700000000123,
+    "claims": {
+      "channels": {
+        "kind": "restricted",
+        "references": [
+          "room-1",
+          "Room_2",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        ]
+      },
+      "permissions": {
+        "kind": "restricted",
+        "segments": [
+          {
+            "segmentId": "seg:say \"hi\" \\ back\\slash / slash",
+            "read": true,
+            "write": true
+          },
+          {
+            "segmentId": "plain",
+            "read": false,
+            "write": false
+          }
+        ]
+      },
+      "replay": {
+        "lookbackMs": 1234
+      },
+      "allowEcho": true
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjE3MDAwMDAwMDAxMjMsImNoYW5uZWxfcmVmZXJlbmNlcyI6WyJyb29tLTEiLCJSb29tXzIiLCJhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWEiXSwidG9rZW5fcGVybWlzc2lvbiI6W3sic2VnbWVudF9pZCI6InNlZzpzYXkgXCJoaVwiIFxcIGJhY2tcXHNsYXNoIC8gc2xhc2giLCJyZWFkIjp0cnVlLCJ3cml0ZSI6dHJ1ZX0seyJzZWdtZW50X2lkIjoicGxhaW4iLCJyZWFkIjpmYWxzZSwid3JpdGUiOmZhbHNlfV0sInJlcGxheSI6MTIzNCwiYWxsb3dfZWNobyI6dHJ1ZX0=",
+      "signature": "c3ludGhldGljLWNsaWVudDpmYjg2Y2JlNjAzZWEyZjA3YjZlZGNjMjM2YzNmYjVjYmUwYzNjMTA5YjIzNmNiMmU1NTEwNGUyZDFlZDgxM2ZmODg5YmVmMTVjNjQ1MDQ2ZTVkMTNkODgxM2VkMDg2OGMyM2RiNDNkYjEzOGRlYTQzZWFhMzlhNzYwZDc0YTcwZg=="
+    }
+  },
+  {
+    "name": "reference-html",
+    "clientId": "synthetic-client",
+    "signingSecret": "synthetic-secret",
+    "timestamp": 1700000000123,
+    "claims": {
+      "channels": {
+        "kind": "all"
+      },
+      "permissions": {
+        "kind": "all",
+        "read": true,
+        "write": false
+      },
+      "reference": "</script><b>&amp;</b>"
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjE3MDAwMDAwMDAxMjMsInJlZmVyZW5jZSI6Ijwvc2NyaXB0PjxiPiZhbXA7PC9iPiIsImNoYW5uZWxfcmVmZXJlbmNlcyI6bnVsbCwidG9rZW5fcGVybWlzc2lvbiI6eyJyZWFkIjp0cnVlLCJ3cml0ZSI6ZmFsc2V9LCJyZXBsYXkiOmZhbHNlLCJhbGxvd19lY2hvIjpmYWxzZX0=",
+      "signature": "c3ludGhldGljLWNsaWVudDo0YjI2OTE1YWY0MWU3OGEwNmM3ZjU5MjFhNjJlYzFlZWE4ZWM2NjgzMmQxMDdmZGQ1Nzc2MjJkY2Y4NDQ5ZTdmNTY2ZWVkMGJkMGM2Yjk5YTg0MWJjZTMxZGRlNTdlMTE5YWEwMzBjOGFiZWFlYzg0MjE0YmIwYjRlNjk2NzgxMg=="
+    }
+  },
+  {
+    "name": "segment-html",
+    "clientId": "synthetic-client",
+    "signingSecret": "synthetic-secret",
+    "timestamp": 1700000000123,
+    "claims": {
+      "channels": {
+        "kind": "restricted",
+        "references": [
+          "room-1",
+          "Room_2",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        ]
+      },
+      "permissions": {
+        "kind": "restricted",
+        "segments": [
+          {
+            "segmentId": "seg:</script><b>&amp;</b>",
+            "read": true,
+            "write": true
+          },
+          {
+            "segmentId": "plain",
+            "read": false,
+            "write": false
+          }
+        ]
+      },
+      "replay": {
+        "lookbackMs": 1234
+      },
+      "allowEcho": true
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjE3MDAwMDAwMDAxMjMsImNoYW5uZWxfcmVmZXJlbmNlcyI6WyJyb29tLTEiLCJSb29tXzIiLCJhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWEiXSwidG9rZW5fcGVybWlzc2lvbiI6W3sic2VnbWVudF9pZCI6InNlZzo8L3NjcmlwdD48Yj4mYW1wOzwvYj4iLCJyZWFkIjp0cnVlLCJ3cml0ZSI6dHJ1ZX0seyJzZWdtZW50X2lkIjoicGxhaW4iLCJyZWFkIjpmYWxzZSwid3JpdGUiOmZhbHNlfV0sInJlcGxheSI6MTIzNCwiYWxsb3dfZWNobyI6dHJ1ZX0=",
+      "signature": "c3ludGhldGljLWNsaWVudDpkMzQ3NTc2NWEwOGJjZjA3NjgxODlmMGI4MDYwZTkyNjE3Y2M4YjY0NWJmYThmOTdlMDk4MjUzMWJiZDAzYTQ0NjJjODk5NDExMDgzOWVhYjVmZmQ0MzI1YTBiNGRjZGI3NzZkNGUxOTUxNmEzZWI5YmUwNWM4NTIxZDc4OGNkMQ=="
+    }
+  },
+  {
+    "name": "reference-separators",
+    "clientId": "synthetic-client",
+    "signingSecret": "synthetic-secret",
+    "timestamp": 1700000000123,
+    "claims": {
+      "channels": {
+        "kind": "all"
+      },
+      "permissions": {
+        "kind": "all",
+        "read": true,
+        "write": false
+      },
+      "reference": "line para end"
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjE3MDAwMDAwMDAxMjMsInJlZmVyZW5jZSI6ImxpbmXigKhwYXJh4oCpZW5kIiwiY2hhbm5lbF9yZWZlcmVuY2VzIjpudWxsLCJ0b2tlbl9wZXJtaXNzaW9uIjp7InJlYWQiOnRydWUsIndyaXRlIjpmYWxzZX0sInJlcGxheSI6ZmFsc2UsImFsbG93X2VjaG8iOmZhbHNlfQ==",
+      "signature": "c3ludGhldGljLWNsaWVudDo5ZWRkZDY4MGYzNTg2NDljZDg5ZTViZTU1NGVlMDg4YjgyYjBjZTY3ZGUxMWUxZTJlYmIyOTdhMmFjNGNmNzU3OGVlMmM1ZGY4Y2M4N2MzODMxOWViNjgxMmFiYjVlNzc2ZmZhZWE3YzE3ZmQ2NzgyM2QzYTI3NjY2YmIwMDkwYQ=="
+    }
+  },
+  {
+    "name": "segment-separators",
+    "clientId": "synthetic-client",
+    "signingSecret": "synthetic-secret",
+    "timestamp": 1700000000123,
+    "claims": {
+      "channels": {
+        "kind": "restricted",
+        "references": [
+          "room-1",
+          "Room_2",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        ]
+      },
+      "permissions": {
+        "kind": "restricted",
+        "segments": [
+          {
+            "segmentId": "seg:line para end",
+            "read": true,
+            "write": true
+          },
+          {
+            "segmentId": "plain",
+            "read": false,
+            "write": false
+          }
+        ]
+      },
+      "replay": {
+        "lookbackMs": 1234
+      },
+      "allowEcho": true
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjE3MDAwMDAwMDAxMjMsImNoYW5uZWxfcmVmZXJlbmNlcyI6WyJyb29tLTEiLCJSb29tXzIiLCJhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWEiXSwidG9rZW5fcGVybWlzc2lvbiI6W3sic2VnbWVudF9pZCI6InNlZzpsaW5l4oCocGFyYeKAqWVuZCIsInJlYWQiOnRydWUsIndyaXRlIjp0cnVlfSx7InNlZ21lbnRfaWQiOiJwbGFpbiIsInJlYWQiOmZhbHNlLCJ3cml0ZSI6ZmFsc2V9XSwicmVwbGF5IjoxMjM0LCJhbGxvd19lY2hvIjp0cnVlfQ==",
+      "signature": "c3ludGhldGljLWNsaWVudDpmM2IwZGYzYTQ5YTc5ZGI4YWZiZGE5YWZmYmU1YmVjMmU1MzdkYjA2Zjk2ZDhlY2FmNzQ3ZTUwN2ZhMjE0NzgxZWZhYmNlZDI1NTk4NDI4YTQ2NzE0NzkzYjYyYzBmYjY5MjlhOTE2ZDUzMTQ5Y2MxNjM5ZmNmY2EyZWQyYmVjOA=="
+    }
+  },
+  {
+    "name": "reference-invisible",
+    "clientId": "synthetic-client",
+    "signingSecret": "synthetic-secret",
+    "timestamp": 1700000000123,
+    "claims": {
+      "channels": {
+        "kind": "all"
+      },
+      "permissions": {
+        "kind": "all",
+        "read": true,
+        "write": false
+      },
+      "reference": "﻿​"
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjE3MDAwMDAwMDAxMjMsInJlZmVyZW5jZSI6In/Che+7v+KAiyIsImNoYW5uZWxfcmVmZXJlbmNlcyI6bnVsbCwidG9rZW5fcGVybWlzc2lvbiI6eyJyZWFkIjp0cnVlLCJ3cml0ZSI6ZmFsc2V9LCJyZXBsYXkiOmZhbHNlLCJhbGxvd19lY2hvIjpmYWxzZX0=",
+      "signature": "c3ludGhldGljLWNsaWVudDo2Yjk1YjY5NGJmZmU3MWUxMWM2YzcxODQ0MzYwNDZlZDk0M2MyYmRjMDEzZDIyODgzZTBhYjU3ZGEwNTNiMmEwZGU3YjMwNmJhZWE4MjMyOGQ3YjZhYjczZTk5NTcxNzk2NzhiNTI0N2NmZDc3OTU0Y2FkYTBkZTYzMWJjNjlkNQ=="
+    }
+  },
+  {
+    "name": "segment-invisible",
+    "clientId": "synthetic-client",
+    "signingSecret": "synthetic-secret",
+    "timestamp": 1700000000123,
+    "claims": {
+      "channels": {
+        "kind": "restricted",
+        "references": [
+          "room-1",
+          "Room_2",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        ]
+      },
+      "permissions": {
+        "kind": "restricted",
+        "segments": [
+          {
+            "segmentId": "seg:﻿​",
+            "read": true,
+            "write": true
+          },
+          {
+            "segmentId": "plain",
+            "read": false,
+            "write": false
+          }
+        ]
+      },
+      "replay": {
+        "lookbackMs": 1234
+      },
+      "allowEcho": true
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjE3MDAwMDAwMDAxMjMsImNoYW5uZWxfcmVmZXJlbmNlcyI6WyJyb29tLTEiLCJSb29tXzIiLCJhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWEiXSwidG9rZW5fcGVybWlzc2lvbiI6W3sic2VnbWVudF9pZCI6InNlZzp/woXvu7/igIsiLCJyZWFkIjp0cnVlLCJ3cml0ZSI6dHJ1ZX0seyJzZWdtZW50X2lkIjoicGxhaW4iLCJyZWFkIjpmYWxzZSwid3JpdGUiOmZhbHNlfV0sInJlcGxheSI6MTIzNCwiYWxsb3dfZWNobyI6dHJ1ZX0=",
+      "signature": "c3ludGhldGljLWNsaWVudDpiMjcwOTAwMGRiOWFjNTg1MjNmYTA4NDFlYzNiMjg5OGMyMzM3MjExNTMwM2Q1NGQ4ZDBjZTAyMTA2N2U4NDk3MzNlNTQzN2U1MTIyZWRhYjFlZGFmNGU0MjEwZmUxMzJlOTVkYzQ5YTAzZmIxMzRjZDQ3ZjAyYmMyYmZkZjczYg=="
+    }
+  },
+  {
+    "name": "reference-astral",
+    "clientId": "synthetic-client",
+    "signingSecret": "synthetic-secret",
+    "timestamp": 1700000000123,
+    "claims": {
+      "channels": {
+        "kind": "all"
+      },
+      "permissions": {
+        "kind": "all",
+        "read": true,
+        "write": false
+      },
+      "reference": "emoji 😀 math 𝔸 cjk 雪"
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjE3MDAwMDAwMDAxMjMsInJlZmVyZW5jZSI6ImVtb2ppIPCfmIAgbWF0aCDwnZS4IGNqayDpm6oiLCJjaGFubmVsX3JlZmVyZW5jZXMiOm51bGwsInRva2VuX3Blcm1pc3Npb24iOnsicmVhZCI6dHJ1ZSwid3JpdGUiOmZhbHNlfSwicmVwbGF5IjpmYWxzZSwiYWxsb3dfZWNobyI6ZmFsc2V9",
+      "signature": "c3ludGhldGljLWNsaWVudDo3MzcwMjdkMzVlMDJkMDU3MzViZTBlYmJiMTczODYyMjNmMDk5MGUxMjA2N2RkMWE0MTAxZjJjOWE0ZTlhYTQ2ZjY4MjQ1OTEzZjhhMjQ4NmUzYmZlMTk3ZTkyYmJlYjEwZjBjZjJjN2FlMDQ1NDliMDhiNDQxZWFiZWEwMmQ4Zg=="
+    }
+  },
+  {
+    "name": "segment-astral",
+    "clientId": "synthetic-client",
+    "signingSecret": "synthetic-secret",
+    "timestamp": 1700000000123,
+    "claims": {
+      "channels": {
+        "kind": "restricted",
+        "references": [
+          "room-1",
+          "Room_2",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        ]
+      },
+      "permissions": {
+        "kind": "restricted",
+        "segments": [
+          {
+            "segmentId": "seg:emoji 😀 math 𝔸 cjk 雪",
+            "read": true,
+            "write": true
+          },
+          {
+            "segmentId": "plain",
+            "read": false,
+            "write": false
+          }
+        ]
+      },
+      "replay": {
+        "lookbackMs": 1234
+      },
+      "allowEcho": true
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjE3MDAwMDAwMDAxMjMsImNoYW5uZWxfcmVmZXJlbmNlcyI6WyJyb29tLTEiLCJSb29tXzIiLCJhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWEiXSwidG9rZW5fcGVybWlzc2lvbiI6W3sic2VnbWVudF9pZCI6InNlZzplbW9qaSDwn5iAIG1hdGgg8J2UuCBjamsg6ZuqIiwicmVhZCI6dHJ1ZSwid3JpdGUiOnRydWV9LHsic2VnbWVudF9pZCI6InBsYWluIiwicmVhZCI6ZmFsc2UsIndyaXRlIjpmYWxzZX1dLCJyZXBsYXkiOjEyMzQsImFsbG93X2VjaG8iOnRydWV9",
+      "signature": "c3ludGhldGljLWNsaWVudDo4YzQzODYyZjdlMzA1ZmE3YmM2ZjMzMjU4YTE3ZThkOWE3N2ZlOWUxOTliZDMyNzBiNTZmOTFmNjc3ODE5YWExODcxODc5YTEwMTdjMjYwY2IzM2E0YjNhOTFiMWYyNDVmMWM3NTVjNTZiNjcxOWU5MDViM2NkMjdlOTE1NTgxMw=="
+    }
+  },
+  {
+    "name": "reference-combining",
+    "clientId": "synthetic-client",
+    "signingSecret": "synthetic-secret",
+    "timestamp": 1700000000123,
+    "claims": {
+      "channels": {
+        "kind": "all"
+      },
+      "permissions": {
+        "kind": "all",
+        "read": true,
+        "write": false
+      },
+      "reference": "é å"
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjE3MDAwMDAwMDAxMjMsInJlZmVyZW5jZSI6ImXMgSBhzIoiLCJjaGFubmVsX3JlZmVyZW5jZXMiOm51bGwsInRva2VuX3Blcm1pc3Npb24iOnsicmVhZCI6dHJ1ZSwid3JpdGUiOmZhbHNlfSwicmVwbGF5IjpmYWxzZSwiYWxsb3dfZWNobyI6ZmFsc2V9",
+      "signature": "c3ludGhldGljLWNsaWVudDoxOWYyNjFiNWVhNGY1YTI5YzZmMGExMDRmNmI0MTAzMDllZDhmNDgwYmY4MzJlN2VjNTk2Y2E5MmQ4YjcxYzYxZDY1ZTQyMDc5ZTA2NGE5YjE3ZDNhYzdjZTkwZjg2YTdjYzk1NGRlMjI4ZjIwZmNkMjViYTRlZmEyYjdiNzQ2NQ=="
+    }
+  },
+  {
+    "name": "segment-combining",
+    "clientId": "synthetic-client",
+    "signingSecret": "synthetic-secret",
+    "timestamp": 1700000000123,
+    "claims": {
+      "channels": {
+        "kind": "restricted",
+        "references": [
+          "room-1",
+          "Room_2",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        ]
+      },
+      "permissions": {
+        "kind": "restricted",
+        "segments": [
+          {
+            "segmentId": "seg:é å",
+            "read": true,
+            "write": true
+          },
+          {
+            "segmentId": "plain",
+            "read": false,
+            "write": false
+          }
+        ]
+      },
+      "replay": {
+        "lookbackMs": 1234
+      },
+      "allowEcho": true
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjE3MDAwMDAwMDAxMjMsImNoYW5uZWxfcmVmZXJlbmNlcyI6WyJyb29tLTEiLCJSb29tXzIiLCJhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWEiXSwidG9rZW5fcGVybWlzc2lvbiI6W3sic2VnbWVudF9pZCI6InNlZzplzIEgYcyKIiwicmVhZCI6dHJ1ZSwid3JpdGUiOnRydWV9LHsic2VnbWVudF9pZCI6InBsYWluIiwicmVhZCI6ZmFsc2UsIndyaXRlIjpmYWxzZX1dLCJyZXBsYXkiOjEyMzQsImFsbG93X2VjaG8iOnRydWV9",
+      "signature": "c3ludGhldGljLWNsaWVudDo3ZGE1MmFiZmUwNzUyMWU0YTQ2NGExZTk0MmI4NjJhZmM5ZDIxMWJiYmFmZWVkN2VkN2ExZjZkY2EzOWM4YWZlZDEwYTQ3NWYzYmY2YzViYWJjMmM3YWZlZmIyZjZhYjk4NjEyZTMwYzgwYjBmMTZkY2I2YTg5ZDM1OTM2ODMwNQ=="
+    }
+  },
+  {
+    "name": "reference-replacement",
+    "clientId": "synthetic-client",
+    "signingSecret": "synthetic-secret",
+    "timestamp": 1700000000123,
+    "claims": {
+      "channels": {
+        "kind": "all"
+      },
+      "permissions": {
+        "kind": "all",
+        "read": true,
+        "write": false
+      },
+      "reference": "�"
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjE3MDAwMDAwMDAxMjMsInJlZmVyZW5jZSI6Iu+/vSIsImNoYW5uZWxfcmVmZXJlbmNlcyI6bnVsbCwidG9rZW5fcGVybWlzc2lvbiI6eyJyZWFkIjp0cnVlLCJ3cml0ZSI6ZmFsc2V9LCJyZXBsYXkiOmZhbHNlLCJhbGxvd19lY2hvIjpmYWxzZX0=",
+      "signature": "c3ludGhldGljLWNsaWVudDplZDRmZmQ1MjlkNjdjYTE0ZWJmNWU0YzQ1NjQwOTlmMzdkZGJmOTg5ZGQyMmIyODVlYzY4YmMyZGE4ZmI4ODY5MDlkYzg2OWM0Y2IwMTY5NDA5NWU5YWQwMmQ4MGYyM2E4MmFiNmI4MjE2MTlkNzcwNGRhMDI3Yzk3MWNlODk0MQ=="
+    }
+  },
+  {
+    "name": "segment-replacement",
+    "clientId": "synthetic-client",
+    "signingSecret": "synthetic-secret",
+    "timestamp": 1700000000123,
+    "claims": {
+      "channels": {
+        "kind": "restricted",
+        "references": [
+          "room-1",
+          "Room_2",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        ]
+      },
+      "permissions": {
+        "kind": "restricted",
+        "segments": [
+          {
+            "segmentId": "seg:�",
+            "read": true,
+            "write": true
+          },
+          {
+            "segmentId": "plain",
+            "read": false,
+            "write": false
+          }
+        ]
+      },
+      "replay": {
+        "lookbackMs": 1234
+      },
+      "allowEcho": true
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjE3MDAwMDAwMDAxMjMsImNoYW5uZWxfcmVmZXJlbmNlcyI6WyJyb29tLTEiLCJSb29tXzIiLCJhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWEiXSwidG9rZW5fcGVybWlzc2lvbiI6W3sic2VnbWVudF9pZCI6InNlZzrvv70iLCJyZWFkIjp0cnVlLCJ3cml0ZSI6dHJ1ZX0seyJzZWdtZW50X2lkIjoicGxhaW4iLCJyZWFkIjpmYWxzZSwid3JpdGUiOmZhbHNlfV0sInJlcGxheSI6MTIzNCwiYWxsb3dfZWNobyI6dHJ1ZX0=",
+      "signature": "c3ludGhldGljLWNsaWVudDo0MjM1NDRjZTU5MjU4ZTIwOWQ5NTkxMmVhNzUxNTZkOTc1ZDJiNTU5YzAwNjEwY2ZkZTk5ZjZlMGQ3YzBmOTU3MzE0ZjFjYjIzNjAyYTQ1ZTM3ODFhMTZmYjllZDdkMDJmOWQ1NTZkYmMzNTdhZWU3NTA5M2FlZmI2ZGJiNzdhYw=="
+    }
+  },
+  {
+    "name": "unicode-client-and-secret",
+    "clientId": "クライアント-😀",
+    "signingSecret": "秘密 \u0000\"\\",
+    "timestamp": 1,
+    "claims": {
+      "channels": {
+        "kind": "all"
+      },
+      "permissions": {
+        "kind": "restricted",
+        "segments": []
+      },
+      "replay": true
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjEsImNoYW5uZWxfcmVmZXJlbmNlcyI6bnVsbCwidG9rZW5fcGVybWlzc2lvbiI6W10sInJlcGxheSI6dHJ1ZSwiYWxsb3dfZWNobyI6ZmFsc2V9",
+      "signature": "44Kv44Op44Kk44Ki44Oz44OILfCfmIA6ZTJlM2NjMGJlNmQyMzA4Y2I0ODcwMTE5YzdmNmRhMWVkODFjMzA0OWYwZmU5YzFlNDA3ZWFjMWZlZTgyNWZiZDFiZjk5OTI2MzBjZDc2Y2FlYTIxMmJmNzk3N2ZhNzg4NmQ4ZTgyODRhMDJjMDMyZDZhYjNmNmI5YjEzMjNiZjU="
+    }
+  },
+  {
+    "name": "latest-timestamp",
+    "clientId": "synthetic-client",
+    "signingSecret": "synthetic-secret",
+    "timestamp": 253402300799999,
+    "claims": {
+      "channels": {
+        "kind": "restricted",
+        "references": [
+          "x"
+        ]
+      },
+      "permissions": {
+        "kind": "all",
+        "read": false,
+        "write": true
+      },
+      "replay": {
+        "lookbackMs": 4294967295
+      }
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjI1MzQwMjMwMDc5OTk5OSwiY2hhbm5lbF9yZWZlcmVuY2VzIjpbIngiXSwidG9rZW5fcGVybWlzc2lvbiI6eyJyZWFkIjpmYWxzZSwid3JpdGUiOnRydWV9LCJyZXBsYXkiOjQyOTQ5NjcyOTUsImFsbG93X2VjaG8iOmZhbHNlfQ==",
+      "signature": "c3ludGhldGljLWNsaWVudDpiMGY2NmM2YWMzZDYwYWE5ZWUzMjkyYWMzZThlZjBjMTFiM2MyZjJjNzkwZWI0ZmQ5MzA1ZDY0Njc3NTE0NzA5M2E3MThhMjk5OTAxMGNjNzlkZWIxMTdjNGMyNTZjYzYxODVkODBlNTZlZDVlN2M5YTE0MjVmODgwNDc4Y2YxYw=="
+    }
+  }
+]

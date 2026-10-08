@@ -1,0 +1,32 @@
+[package]
+name = "useceleris-server"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+description = "Server SDK for Celeris realtime channels: signs connection credentials on a trusted server."
+license = "Apache-2.0"
+repository = "https://github.com/useceleris/sdk-rust-server"
+homepage = "https://useceleris.com"
+documentation = "https://docs.rs/useceleris-server"
+readme = "README.md"
+keywords = ["realtime", "websocket", "pubsub", "celeris", "credentials"]
+categories = ["network-programming", "web-programming::websocket", "authentication"]
+exclude = [".env", ".env.example", ".github/", "Makefile", "AGENTS.md", "CONVENTIONS.md"]
+
+[dependencies]
+base64 = "0.22"
+hmac = "0.13"
+sha2 = "0.11"
+useceleris-client = { version = "0.1.0", path = "../sdk-rust-client" }
+
+[dev-dependencies]
+proc-macro2 = { version = "1", features = ["span-locations"] }
+serde_json = "1"
+syn = { version = "2", features = ["full", "visit"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "time", "test-util", "net", "io-util", "sync"] }
+
+# The live suites run only when named: `make live`.
+[[test]]
+name = "live"
+path = "tests/live/main.rs"
+test = false

@@ -1,0 +1,92 @@
+[
+  {
+    "name": "scoped",
+    "clientId": "synthetic-client",
+    "signingSecret": "synthetic-secret",
+    "timestamp": 123456789,
+    "claims": {
+      "channels": {"kind": "restricted", "references": ["room-1"]},
+      "permissions": {"kind": "restricted", "segments": [{"segmentId": "messages", "read": true, "write": false}]}
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjEyMzQ1Njc4OSwiY2hhbm5lbF9yZWZlcmVuY2VzIjpbInJvb20tMSJdLCJ0b2tlbl9wZXJtaXNzaW9uIjpbeyJzZWdtZW50X2lkIjoibWVzc2FnZXMiLCJyZWFkIjp0cnVlLCJ3cml0ZSI6ZmFsc2V9XSwicmVwbGF5IjpmYWxzZSwiYWxsb3dfZWNobyI6ZmFsc2V9",
+      "signature": "c3ludGhldGljLWNsaWVudDphMjU4ZDM5ZGZiNjgyODlkMzE2NjdlMDVjMGRhNzZmMzAyOTFmMmEwMzBmZmFlZDE0NjU1ZjcyZjNjMDhhNDQ5MWNkZjhiYjQ2Yjk3ZmZiNzY1ZjMyOWM0MWJjZDVlM2ZkMzM2YjY0YTY2NTIzMjdkNTdmZDY1ZDg1YjkwMjhjZQ=="
+    }
+  },
+  {
+    "name": "all",
+    "clientId": "synthetic-client",
+    "signingSecret": "synthetic-secret",
+    "timestamp": 123456789,
+    "claims": {
+      "channels": {"kind": "all"},
+      "permissions": {"kind": "all", "read": true, "write": true},
+      "replay": true,
+      "allowEcho": true
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjEyMzQ1Njc4OSwiY2hhbm5lbF9yZWZlcmVuY2VzIjpudWxsLCJ0b2tlbl9wZXJtaXNzaW9uIjp7InJlYWQiOnRydWUsIndyaXRlIjp0cnVlfSwicmVwbGF5Ijp0cnVlLCJhbGxvd19lY2hvIjp0cnVlfQ==",
+      "signature": "c3ludGhldGljLWNsaWVudDphMGFlMDRjM2RlMTc0YjMzNjhhNjdjNTc1NTgzMTBjZGNjMDVkZjhiZWFjNDRlMTk5NDMwODQ4MzBlZTVjNTA1MWY1OGI1ZDA1MDNjZTEzNTQ4ZmJlM2EyNjdkMzQ1Mjk5OGM3YWYzOWU4NTBiZTYxYmJlNjVmNGNkYTNmNGI0Ng=="
+    }
+  },
+  {
+    "name": "deny-all",
+    "clientId": "synthetic-client",
+    "signingSecret": "synthetic-secret",
+    "timestamp": 123456789,
+    "claims": {
+      "channels": {"kind": "restricted", "references": ["room-1"]},
+      "permissions": {"kind": "restricted", "segments": []}
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjEyMzQ1Njc4OSwiY2hhbm5lbF9yZWZlcmVuY2VzIjpbInJvb20tMSJdLCJ0b2tlbl9wZXJtaXNzaW9uIjpbXSwicmVwbGF5IjpmYWxzZSwiYWxsb3dfZWNobyI6ZmFsc2V9",
+      "signature": "c3ludGhldGljLWNsaWVudDo0OThhNzY5OTBlZWFiMzY0Y2E1OGU5ZGU0MDc3YzEyNjA5NjU1MmRkYmQ3MjU1YTE1ZDFmMmVmYWZkMjQ0NmQxNjk0MWJmYmQ4N2U5ZTI5NjNkMTEyNjZmZjk1YzI4NmRhNTdiYzU2OTFhNDViMTg4MzNhZTU5MDdlNDM5MGRlMA=="
+    }
+  },
+  {
+    "name": "unicode-zero",
+    "clientId": "client-雪",
+    "signingSecret": "secret-雪",
+    "timestamp": 123456789,
+    "claims": {
+      "channels": {"kind": "all"},
+      "permissions": {"kind": "restricted", "segments": [{"segmentId": "雪", "read": false, "write": true}]},
+      "reference": "身分",
+      "replay": {"lookbackMs": 0}
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjEyMzQ1Njc4OSwicmVmZXJlbmNlIjoi6Lqr5YiGIiwiY2hhbm5lbF9yZWZlcmVuY2VzIjpudWxsLCJ0b2tlbl9wZXJtaXNzaW9uIjpbeyJzZWdtZW50X2lkIjoi6ZuqIiwicmVhZCI6ZmFsc2UsIndyaXRlIjp0cnVlfV0sInJlcGxheSI6MCwiYWxsb3dfZWNobyI6ZmFsc2V9",
+      "signature": "Y2xpZW50Lembqjo4MjVlZTM0NDA0ODc3YTYwYzJmZmJjZjk1NzA2NGRmZGYzOGNjZTE4NWQxM2JiNzRmNzUxOGE2N2UzZTk0Y2JmMDViNjRlMDQ1MDE2MjhiODIzYzViZTQwYmJlM2RmMDA5M2FjZDk2MTQ4YzE5MDk0NzA0MzkwYTlhZjJmZTk4ZA=="
+    }
+  },
+  {
+    "name": "replay-max",
+    "clientId": "synthetic-client",
+    "signingSecret": "synthetic-secret",
+    "timestamp": 123456789,
+    "claims": {
+      "channels": {"kind": "all"},
+      "permissions": {"kind": "all", "read": false, "write": false},
+      "replay": {"lookbackMs": 4294967295}
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjEyMzQ1Njc4OSwiY2hhbm5lbF9yZWZlcmVuY2VzIjpudWxsLCJ0b2tlbl9wZXJtaXNzaW9uIjp7InJlYWQiOmZhbHNlLCJ3cml0ZSI6ZmFsc2V9LCJyZXBsYXkiOjQyOTQ5NjcyOTUsImFsbG93X2VjaG8iOmZhbHNlfQ==",
+      "signature": "c3ludGhldGljLWNsaWVudDpiMjZmM2Y2MDAzNThmM2U3OGEwZTQ4NDU3OTE0YmI3NGQzYmMxMWRjMDMxZjU0MjNhYzIxNjJhNzQzZTUzYzg4NGU3YTFlNzE2ZTFjYjlkOTUwNTdiNTkwNGNlZjY0YjVhYjBlZjEyNDNkMmJmOWQ1MmRiZGIzYjJlYjE2ZTk4Zg=="
+    }
+  },
+  {
+    "name": "escapes",
+    "clientId": "synthetic-client",
+    "signingSecret": "synthetic-secret",
+    "timestamp": 123456789,
+    "claims": {
+      "channels": {"kind": "all"},
+      "permissions": {"kind": "restricted", "segments": [{"segmentId": "s:</script>\b\f", "read": true, "write": false}]},
+      "reference": "u\"\\/\t\u0000\u001f\u007f\u0085\u2028\u2029\ufeff😀"
+    },
+    "expected": {
+      "payload": "eyJ0aW1lc3RhbXAiOjEyMzQ1Njc4OSwicmVmZXJlbmNlIjoidVwiXFwvXHRcdTAwMDBcdTAwMWZ/woXigKjigKnvu7/wn5iAIiwiY2hhbm5lbF9yZWZlcmVuY2VzIjpudWxsLCJ0b2tlbl9wZXJtaXNzaW9uIjpbeyJzZWdtZW50X2lkIjoiczo8L3NjcmlwdD5cYlxmIiwicmVhZCI6dHJ1ZSwid3JpdGUiOmZhbHNlfV0sInJlcGxheSI6ZmFsc2UsImFsbG93X2VjaG8iOmZhbHNlfQ==",
+      "signature": "c3ludGhldGljLWNsaWVudDozZDA2ZDAyMjRlYTI5ZGM5Yzc5NjE0YTI5MGZhZGQ2MThjN2UyMGI2N2EyYjI4Y2Q0NmZjNTZkZGE2YTM2ODhiMTM3NjIwMDBiOGYwNWJkN2U2MTAwZjkxNTg2YjcwZjhjOTQ2OGI1N2MwYTgxOGM3NmZhYzdjYmFlNDU4YWVmMQ=="
+    }
+  }
+]
