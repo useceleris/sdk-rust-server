@@ -75,6 +75,8 @@ Authenticate and authorize the user before you choose their claims. Never sign p
 | `replay`      | `Replay::None`, `Replay::Backlog` for all the history that the server keeps, or `Replay::Lookback(duration)` in whole milliseconds, 0 to 4294967295 | `Replay::None` |
 | `allow_echo`  | If `true`, a connection receives its own publishes                                                           | `false`             |
 
+A subscription needs `read`, and a publish needs `write`. A token with `write` only can publish and cannot subscribe. A token with `read` only can subscribe and cannot publish. A publish does not join a segment.
+
 The server replays history each time the connection joins a segment. `Replay::Lookback(Duration::ZERO)` is different from `Replay::None`: it replays nothing older than the join.
 
 ## A credential endpoint
