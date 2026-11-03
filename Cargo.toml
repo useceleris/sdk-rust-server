@@ -1,6 +1,6 @@
 [package]
 name = "useceleris-server"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2024"
 rust-version = "1.88"
 description = "Server SDK for Celeris realtime channels: signs connection credentials on a trusted server."
@@ -25,10 +25,10 @@ exclude = [
 ]
 
 [dependencies]
-useceleris-client = "1"
 base64 = "0.23"
 hmac = "0.13"
 sha2 = "0.11"
+useceleris-client = "1"
 
 [dev-dependencies]
 proc-macro2 = { version = "1", features = ["span-locations"] }

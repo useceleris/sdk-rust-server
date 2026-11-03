@@ -633,9 +633,9 @@ checksum = "8ecb6da28b8a351d773b68d5825ac39017e680750f980f3a1a85cd8dd28a47c1"
 
 [[package]]
 name = "useceleris-client"
-version = "1.0.1"
+version = "1.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b23675da20b7e2a13625e3408c15ddac8a67feeb76181bed7a573e562d1900c3"
+checksum = "bd30857131e3d9f2f1b66dce84c6e3aa82dfb533c1778168960a8c029d78a63c"
 dependencies = [
  "futures-util",
  "getrandom 0.4.3",
@@ -647,7 +647,7 @@ dependencies = [
 
 [[package]]
 name = "useceleris-server"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "base64",
  "hmac",
